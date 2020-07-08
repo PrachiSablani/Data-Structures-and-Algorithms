@@ -1,5 +1,4 @@
- 
-class Heap:
+ class Heap:
     def __init__(self):
         self.items = []
         self.size = 0
@@ -75,19 +74,35 @@ class Heap:
             else:
                 break
 
-class Stack():
-   
-        
 obj = Heap()
-obj.insert(0,10)
-obj.insert(1,15)
-obj.insert(2,2)
-obj.insert(3,17)
-obj.insert(4,5)
+count = 0
+def push(data):
+  global count
+  obj.insert(count,data)
+  count += 1
+  
+def pop():
+  obj.poll()
 
-print(obj.items)
-      
-obj.poll()
-obj.poll()
+def top():
+  print("Top element is:",obj.peek())
+
+def isEmpty():
+  return obj.size <= 0
+
+def show():
+  print(obj.items)
         
-print(obj.items)
+push(10)
+push(15)
+push(2)
+push(17)
+push(5)
+show()
+top()
+pop()
+pop()
+show()
+print(isEmpty())
+
+        
